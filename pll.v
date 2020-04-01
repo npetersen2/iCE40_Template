@@ -72,19 +72,19 @@ output locked;
 wire clock_int;
 
 // Configure PLL
-SB_PLL40_CORE #(							
-	.FEEDBACK_PATH("SIMPLE"),
-	.DIVR(`PLL_DIVR),
-	.DIVF(`PLL_DIVF),
-	.DIVQ(`PLL_DIVQ),
-	.FILTER_RANGE(`PLL_FILTER_RANGE)
-	) pll_inst (								
-		.LOCK(locked),						
-		.RESETB(1'b1),						
-		.BYPASS(1'b0),						
-		.REFERENCECLK(clock_in),				
-		.PLLOUTGLOBAL(clock_int)				
-	);
+SB_PLL40_CORE #(                            
+    .FEEDBACK_PATH("SIMPLE"),
+    .DIVR(`PLL_DIVR),
+    .DIVF(`PLL_DIVF),
+    .DIVQ(`PLL_DIVQ),
+    .FILTER_RANGE(`PLL_FILTER_RANGE)
+    ) pll_inst (                                
+        .LOCK(locked),                        
+        .RESETB(1'b1),                        
+        .BYPASS(1'b0),                        
+        .REFERENCECLK(clock_in),                
+        .PLLOUTGLOBAL(clock_int)                
+    );
 
 // Hook up PLL output to a global buffer designed for
 // distributing signals to entire device (i.e. clocks)
@@ -97,8 +97,8 @@ SB_PLL40_CORE #(
 // logic-generated clock.
 //
 SB_GB gb_inst (
-	.USER_SIGNAL_TO_GLOBAL_BUFFER(clock_int),
-	.GLOBAL_BUFFER_OUTPUT(global_clock)
+    .USER_SIGNAL_TO_GLOBAL_BUFFER(clock_int),
+    .GLOBAL_BUFFER_OUTPUT(global_clock)
 );
 
-endmodule	
+endmodule    

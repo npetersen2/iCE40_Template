@@ -28,16 +28,16 @@ reg [WIDTH-1:0] counter;
 // =====================
 wire clk, rst_n;
 sys sys_inst(
-	.CLK_IN(CLK_IN),
-	.clk(clk),
-	.rst_n(rst_n)
+    .CLK_IN(CLK_IN),
+    .clk(clk),
+    .rst_n(rst_n)
 );
 
 always @(posedge clk, negedge rst_n) begin
-	if (~rst_n)
-		counter <= 32'h0;
-	else
-		counter <= counter + 1;
+    if (~rst_n)
+        counter <= 32'h0;
+    else
+        counter <= counter + 1;
 end
 
 assign LED1 = counter[WIDTH-1];

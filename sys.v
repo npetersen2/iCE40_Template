@@ -20,9 +20,9 @@
 //    // =====================
 //    wire clk, rst_n;
 //    sys sys_inst(
-//    	.CLK_IN(CLK_IN),
-//    	.clk(clk),
-//    	.rst_n(rst_n)
+//        .CLK_IN(CLK_IN),
+//        .clk(clk),
+//        .rst_n(rst_n)
 //    );
 //
 // By Nathan Petersen
@@ -43,9 +43,9 @@ output clk, rst_n;
 // =======================
 wire pll_locked;
 pll myPLL(
-	.clock_in(CLK_IN),
-	.global_clock(clk),
-	.locked(pll_locked)
+    .clock_in(CLK_IN),
+    .global_clock(clk),
+    .locked(pll_locked)
 );
 
 // =======================
@@ -68,7 +68,7 @@ pll myPLL(
 // =======================
 reg [3:0] pll_locked_ff;
 always @(posedge CLK_IN)
-	pll_locked_ff <= {pll_locked_ff, pll_locked};
+    pll_locked_ff <= {pll_locked_ff, pll_locked};
 assign rst_n = pll_locked_ff[3];
 
 
