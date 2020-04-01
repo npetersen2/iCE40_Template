@@ -69,3 +69,14 @@ We now have the required bitmap to program into the flash of the iCEstick hardwa
 This will send the bitmap binary contents over USB to the iCEstick and store them in the SPI flash device.
 
 **Congratulations!** Your FPGA should be running and the LEDs should be blinking!
+
+
+## Notes
+
+### Global Signals (`clk` and `rst_n`)
+
+The template files configure the FPGA PLL to accept the 12MHz clock input `CLK_IN` from the oscillator on the PCB and derive a 120MHz clock `clk` which is used for the rest of the digital logic. They also provide a global, asynchronous, active-low reset signal `rst_n` which can be used to set initial values for registers.
+
+### Configuring `clk` Frequency
+
+You can adjust the PLL settings to use a different system clock frequency by editing `pll.v`. To generate the correct PLL settings, use the iCEcube2 PLL configuration tool: `Tool` > `Configure ...` > `Configure PLL Module ...`. This wizard can be used to generate the right `DIV*` constants for various frequencies.
