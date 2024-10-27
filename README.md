@@ -8,10 +8,10 @@ This repository stores the needed files to get started with the iCE40 line of FP
 
 There are two approaches for build tools: official tools for Lattice or open-source tools. This document uses the official tools on a Windows PC.
 
-1. Download and install `Lattice iCEcube2` IDE from [website](http://www.latticesemi.com/iCEcube2). You'll need to make an account.
-2. Get a license for the dev tools locked to your MAC address [here](http://www.latticesemi.com/Support/Licensing/DiamondAndiCEcube2SoftwareLicensing/iceCube2) and download to PC.
-3. Add an environment variable called `LM_LICENSE_FILE` with the value of the path to your license file.
-4. Download the `Lattice Diamond Programmer` and install it. Go [here](http://www.latticesemi.com/latticediamond) and scroll down to `Programmer Standalone 3.11.2 64-bit for Windows` and install.
+1. Download and install `Lattice iCEcube2` IDE from [website](https://www.latticesemi.com/Products/DesignSoftwareAndIP/FPGAandLDS/iCEcube2). You'll need to make an account.
+2. Get a license for the dev tools. You will need to email Lattice to request the free license. This may take a few days.
+3. Use the `LicenseSetup.exe` tool to add the license to your system.
+4. Download the `Lattice Diamond Programmer` and install it. Go [here](http://www.latticesemi.com/latticediamond) and scroll down to `Programmer Standalone 3.14 64-bit for Windows` and install.
 
 ### Creating iCEcube2 Example Project
 
